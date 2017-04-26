@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @ride.date %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @ride.user %>
-</p>
+<div class="">
+  <table>
+    <th><strong>Your Riding Log:</strong></th>
+    <tr>
+      <td><strong>Rider</strong></td>
+      <td><strong>Date</strong></td>
+    </tr>
+    <tr>
+      <td><%= @ride.user.name %></td>
+      <td><%= @ride.date %></td>
+    </tr>
+  </table>
+</div>
 
 <%= link_to 'Edit', edit_ride_path(@ride) %> |
 <%= link_to 'Back', rides_path %>

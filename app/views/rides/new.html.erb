@@ -1,3 +1,14 @@
 <h1>Log your Ride</h1>
 
 <%= render 'form', ride: @ride %>
+
+<%= calendar do |date| %>
+	<%= date.day %>
+	<% if @rides_by_date[date] %>
+		<ul>
+			<% @rides_by_date[date].each do |ride| %>
+			<li><%= link_to ride.user.name, user_path(ride.user) %></li>
+			<% end %>
+		</ul>
+	<% end %>
+<% end %>

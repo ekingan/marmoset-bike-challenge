@@ -17,12 +17,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :user_id %>
+    <%= f.label "Select Your Name" %>
     <%= f.collection_select :user_id, User.all, :id, :name %>
   </div>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit your ride" %>
   </div>
 <% end %>

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Rides</h1>
+<h1>All Marmoset Rides</h1>
 
 <table>
   <thead>
@@ -14,8 +14,8 @@
   <tbody>
     <% @rides.each do |ride| %>
       <tr>
-        <td><%= ride.date %></td>
-        <td><%= ride.user %></td>
+        <td><%= ride.date.to_formatted_s(:long_ordinal) %></td>
+        <td><%= ride.user.name %></td>
         <td><%= link_to 'Show', ride %></td>
         <td><%= link_to 'Edit', edit_ride_path(ride) %></td>
         <td><%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Ride', new_ride_path %>
+<%= link_to 'Home', new_ride_path %>

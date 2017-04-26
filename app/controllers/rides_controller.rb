@@ -15,6 +15,7 @@ class RidesController < ApplicationController
   # GET /rides/new
   def new
     @ride = Ride.new
+    @rides_by_date = Ride.all.group_by(&:date)
   end
 
   # GET /rides/1/edit
