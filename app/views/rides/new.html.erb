@@ -1,14 +1,30 @@
-<h1>Log your Ride</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<h1>Log your Ride</h1>
+			<%= render 'form', ride: @ride %>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+				<div class="calender">
+					<%= calendar do |date| %>
+						<%= date.day %>
+						<% if @rides_by_date[date] %>
+							<ul>
+								<% @rides_by_date[date].each do |ride| %>
+								<li><%= link_to ride.user.name, user_path(ride.user) %></li>
+								<% end %>
+							</ul>
+						<% end %>
+					<% end %>
+				</div>
+			</div>
+		</div>
 
-<%= render 'form', ride: @ride %>
+	</div>
 
-<%= calendar do |date| %>
-	<%= date.day %>
-	<% if @rides_by_date[date] %>
-		<ul>
-			<% @rides_by_date[date].each do |ride| %>
-			<li><%= link_to ride.user.name, user_path(ride.user) %></li>
-			<% end %>
-		</ul>
-	<% end %>
-<% end %>
+
+
+</div>
