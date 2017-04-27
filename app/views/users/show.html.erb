@@ -1,29 +1,26 @@
 <div class="container user-show">
   <p id="notice"><%= notice %></p>
   <div class="row">
-    <div class="col-md-8 col-md-offset-1">
+    <div class="col-sm-4 col-sm-offset-3">
       <div class="row">
         <div class="col-sm-6">
           <strong><%= @user.name %></strong>
         </div>
         <div class="col-sm-6">
-          <strong>Score: <%= @user.score %></strong>
+          <strong>Total Rides: <%= @user.score %></strong>
         </div>
       </div>
       <div class="row">
+        <% @user.rides.each do |ride| %>
         <div class="col-sm-6">
-          <% @user.rides.each do |ride| %>
-          <ul>
-            <li>
-              <%=ride.date  %>
-              <%= link_to 'Edit', edit_ride_path(ride) %>
-              <%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <%= link_to 'Back', root_path %>
-            </li>
-          </ul>
-          <% end %>
+            <%=ride.date.to_formatted_s(:long_ordinal)  %>
         </div>
-
+        <div class="col-sm-6">
+          <%= link_to 'Edit', edit_ride_path(ride) %> |
+          <%= link_to 'Destroy', ride, method: :delete, data: { confirm: 'Are you sure?' } %> |
+          <%= link_to 'Back', root_path %>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
