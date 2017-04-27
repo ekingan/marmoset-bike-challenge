@@ -16,6 +16,7 @@ class RidesController < ApplicationController
   def new
     @ride = Ride.new
     @rides_by_date = Ride.all.group_by(&:date)
+    @top_riders = User.order(:score).limit(20)
   end
 
   # GET /rides/1/edit
@@ -26,7 +27,6 @@ class RidesController < ApplicationController
   # POST /rides.json
   def create
     @ride = Ride.new(ride_params)
-
     respond_to do |format|
       if @ride.save
         format.html { redirect_to @ride, notice: 'Ride was successfully created.' }

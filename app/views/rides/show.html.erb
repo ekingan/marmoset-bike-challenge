@@ -2,17 +2,16 @@
 
 <div class="">
   <table>
-    <th><strong>Your Riding Log:</strong></th>
     <tr>
       <td><strong>Rider</strong></td>
       <td><strong>Date</strong></td>
     </tr>
     <tr>
       <td><%= @ride.user.name %></td>
-      <td><%= @ride.date %></td>
+      <td><%= @ride.date.to_formatted_s(:long_ordinal) %></td>
     </tr>
   </table>
 </div>
 
 <%= link_to 'Edit', edit_ride_path(@ride) %> |
-<%= link_to 'Back', rides_path %>
+<%= link_to 'Back', root_path %>

@@ -14,7 +14,7 @@
       <div class="col-md-3">
         <div class="field">
           <%= f.label "Select Your Name" %>
-          <%= f.collection_select :user_id, User.all, :id, :name %>
+          <%= f.collection_select :user_id, User.order('name').all, :id, :name %>
         </div>
         <div class="field">
           <%= f.label :date %>

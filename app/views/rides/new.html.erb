@@ -1,30 +1,36 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-8">
 			<h1>Log your Ride</h1>
 			<%= render 'form', ride: @ride %>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-9">
-				<div class="calender">
-					<%= calendar do |date| %>
-						<%= date.day %>
-						<% if @rides_by_date[date] %>
-							<ul>
-								<% @rides_by_date[date].each do |ride| %>
-								<li><%= link_to ride.user.name, user_path(ride.user) %></li>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+						<div class="calendar">
+							<%= calendar do |date| %>
+								<%= date.day %>
+								<% if @rides_by_date[date] %>
+									<ul>
+										<% @rides_by_date[date].each do |ride| %>
+										<li><%= link_to ride.user.name, user_path(ride.user) %></li>
+										<% end %>
+									</ul>
 								<% end %>
-							</ul>
-						<% end %>
-					<% end %>
+							<% end %>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-
+		<div class="col-md-3">
+			<div class="high-scores">
+				<h1>Top Riders</h1>
+				<ul>
+					<% @top_riders.each do |rider| %>
+					<li><%= link_to rider.name, user_path(rider) %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
 	</div>
-
-
-
 </div>
