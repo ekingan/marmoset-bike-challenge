@@ -6,7 +6,7 @@
 			</div>
 		</div>
 		<div class="col-sm-8 title">
-			<h1>Log your Ride</h1>
+			<h1>May Bike Challenge - Log your Ride</h1>
 			<%= render 'form', ride: @ride %>
 		</div>
 	</div>
@@ -35,7 +35,9 @@
 				<h3>Top Riders</h3>
 				<ul class="hish-scores" style="align:left;">
 					<% @top_riders.each do |rider| %>
-					<li><%= link_to rider.name, user_path(rider) %></li>
+					<li><%= link_to rider.name, user_path(rider) %>
+						(<%= rider.score %> rides)
+					</li>
 					<% end %>
 				</ul>
 				<h5><%= link_to "See all rides by date...", rides_path %></h5>
