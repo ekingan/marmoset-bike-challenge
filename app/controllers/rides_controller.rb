@@ -16,7 +16,7 @@ class RidesController < ApplicationController
   def new
     @ride = Ride.new
     @rides_by_date = Ride.all.group_by(&:date)
-    @top_riders = User.order(score: :desc).limit(20)
+    @top_riders = User.order(score: :desc)
   end
 
   # GET /rides/1/edit

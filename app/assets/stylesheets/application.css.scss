@@ -17,3 +17,8 @@
   @import 'bootstrap-sprockets';
   @import 'bootstrap';
   @import 'bootswatch/cosmo/bootswatch';
+
+  a:hover {
+      background-color: purple;
+      color: white;
+  }

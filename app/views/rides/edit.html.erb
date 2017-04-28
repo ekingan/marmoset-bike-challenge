@@ -1,6 +1,14 @@
-<h1>Editing Ride</h1>
-
-<%= render 'form', ride: @ride %>
-
-<%= link_to 'Show', @ride %> |
-<%= link_to 'Back', user_path(@ride.user) %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-offset-3">
+			<h2>Edit your ride</h2>
+		</div>
+		<div class="col-md-8">
+			<%= render 'form', ride: @ride %>
+		</div>
+		<div class="col-md-4">
+			<%= link_to 'Show', @ride %> |
+			<%= link_to 'Back', user_path(@ride.user) %>
+		</div>
+	</div>
+</div>

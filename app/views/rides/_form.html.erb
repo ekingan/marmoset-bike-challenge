@@ -11,17 +11,19 @@
       </div>
     <% end %>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-sm-3">
         <div class="field">
-          <%= f.label "Select Your Name" %>
+          <%= f.label "Select Name" %>
           <%= f.collection_select :user_id, User.order('name').all, :id, :name %>
         </div>
+      </div>
+      <div class="col-sm-3">
         <div class="field">
           <%= f.label :date %>
           <%= f.date_select :date %>
         </div>
       </div>
-      <div class="col-md-1">
+      <div class="col-sm-1">
         <div class="actions">
           <%= f.submit "Submit your ride" %>
         </div>

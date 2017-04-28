@@ -1,30 +1,34 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-8">
-			<h1>Log your Ride</h1> 
+		<div class="col-sm-8">
+			<h1>Log your Ride</h1>
 			<%= render 'form', ride: @ride %>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-9">
-						<div class="calendar">
-							<%= calendar do |date| %>
-								<%= date.day %>
-								<% if @rides_by_date[date] %>
-									<ul>
-										<% @rides_by_date[date].each do |ride| %>
-										<li><%= link_to ride.user.name, user_path(ride.user) %></li>
-										<% end %>
-									</ul>
-								<% end %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-9">
+			<div class="calendar">
+				<center>
+					<h2>Marmoset Riders Log</h2>
+					<h4>Click on your name to edit</h4>
+				</center>
+				<%= calendar do |date| %>
+					<%= date.day %>
+					<% if @rides_by_date[date] %>
+						<ul>
+							<% @rides_by_date[date].each do |ride| %>
+							<li><%= link_to ride.user.name, user_path(ride.user) %></li>
 							<% end %>
-						</div>
-					</div>
-				</div>
+						</ul>
+					<% end %>
+				<% end %>
 			</div>
 		</div>
-		<div class="col-md-3">
+		<div class="col-sm-3">
 			<div class="high-scores">
-				<h1>Top Riders</h1>
+				<h2>Top Riders</h2>
+				<h4><%= link_to "See all rides by date...", rides_path %></h4>
 				<ul>
 					<% @top_riders.each do |rider| %>
 					<li><%= link_to rider.name, user_path(rider) %></li>
