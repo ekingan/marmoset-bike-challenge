@@ -8,7 +8,8 @@
 		</div>
 		<div class="col-md-4">
 			<%= link_to 'Show', @ride %> |
-			<%= link_to 'Back', user_path(@ride.user) %>
+			<%= link_to 'Back', user_path(@ride.user) %> |
+			<%= link_to 'Delete', @ride, method: :delete, data: { confirm: 'Are you sure?' } %>
 		</div>
 	</div>
 </div>
