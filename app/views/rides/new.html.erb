@@ -1,6 +1,11 @@
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8">
+		<div class="col-sm-2">
+			<div class="logo">
+				<%= image_tag('marmoset_music_share.png') %>
+			</div>
+		</div>
+		<div class="col-sm-8 title">
 			<h1>Log your Ride</h1>
 			<%= render 'form', ride: @ride %>
 		</div>
@@ -27,7 +32,7 @@
 		</div>
 		<div class="col-sm-3">
 			<div class="high-scores">
-				<h2>Top Riders</h2>
+				<h3>Top Riders</h3>
 				<h4><%= link_to "See all rides by date...", rides_path %></h4>
 				<ul>
 					<% @top_riders.each do |rider| %>
