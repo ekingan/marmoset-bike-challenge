@@ -33,12 +33,12 @@
 		<div class="col-sm-3">
 			<div class="high-scores">
 				<h3>Top Riders</h3>
-				<h4><%= link_to "See all rides by date...", rides_path %></h4>
-				<ul>
+				<ul class="hish-scores" style="align:left;">
 					<% @top_riders.each do |rider| %>
 					<li><%= link_to rider.name, user_path(rider) %></li>
 					<% end %>
 				</ul>
+				<h5><%= link_to "See all rides by date...", rides_path %></h5>
 			</div>
 		</div>
 	</div>
