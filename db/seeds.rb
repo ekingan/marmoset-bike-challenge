@@ -60,5 +60,5 @@ user_list = [
 ]
 
 user_list.each do |name|
-  User.create( name: name )
+  User.create( name: name)
 end
