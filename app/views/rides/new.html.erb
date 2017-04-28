@@ -35,9 +35,11 @@
 				<h3>Top Riders</h3>
 				<ul class="hish-scores" style="align:left;">
 					<% @top_riders.each do |rider| %>
-					<li><%= link_to rider.name, user_path(rider) %>
-						(<%= rider.score %> rides)
-					</li>
+					<% if rider.score > 0 %>
+						<li><%= link_to rider.name, user_path(rider) %>
+							(<%= rider.score %> rides)
+						</li>
+						<% end %>
 					<% end %>
 				</ul>
 				<h5><%= link_to "See all rides by date...", rides_path %></h5>
