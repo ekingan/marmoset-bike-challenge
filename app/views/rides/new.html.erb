@@ -1,36 +1,36 @@
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-2">
 			<div class="logo">
 				<%= image_tag('marmoset_music_share.png') %>
 			</div>
 		</div>
-		<div class="col-sm-12 col-md-10 title">
+		<div class="col-sm-10 title">
 			<h1>May Bike Challenge - Log your Ride</h1>
 			<%= render 'form', ride: @ride %>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="col-sm-12 col-md-9">
+		<div class="col-sm-12 col-lg-9">
 			<div class="calendar">
 				<center>
 					<h2>Marmoset Riders Log</h2>
 					<h4>Click on your name to edit</h4>
-				</center>
-				<%= calendar do |date| %>
-					<%= date.day %>
-					<% if @rides_by_date[date] %>
-						<ul>
-							<% @rides_by_date[date].each do |ride| %>
-							<li><%= link_to ride.user.name, user_path(ride.user) %></li>
-							<% end %>
-						</ul>
+					<%= calendar do |date| %>
+						<%= date.day %>
+						<% if @rides_by_date[date] %>
+							<ul>
+								<% @rides_by_date[date].each do |ride| %>
+								<li><%= link_to ride.user.name, user_path(ride.user) %></li>
+								<% end %>
+							</ul>
+						<% end %>
 					<% end %>
-				<% end %>
+				</center>
 			</div>
 		</div>
-		<div class="col-sm-12 col-md-3">
+		<div class="col-sm-12 col-lg-3">
 			<div class="high-scores">
 				<h3>Top Riders</h3>
 				<ul class="hish-scores" style="align:left;">
