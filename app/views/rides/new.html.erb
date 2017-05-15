@@ -37,12 +37,12 @@
 					<% @top_riders.each do |rider| %>
 					<% if rider.score > 0 %>
 						<li><%= link_to rider.name, user_path(rider) %>
-							(<%= rider.score %> rides)
+							(<%= pluralize(rider.score, 'ride') %>)
 						</li>
 						<% end %>
 					<% end %>
 				</ul>
-				<h5><%= link_to "See all rides by date...", rides_path %></h5>
+				<h5><%= link_to "See all rides", rides_path %></h5>
 			</div>
 		</div>
 	</div>
