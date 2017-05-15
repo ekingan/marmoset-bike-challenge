@@ -13,18 +13,18 @@
     <div class="row">
       <div class="col-sm-3">
         <div class="field">
-          <%= f.label "Select Name" %>
+          <%= f.label "Select Name" %> <br>
           <%= f.collection_select :user_id, User.order('name').all, :id, :name %>
         </div>
       </div>
       <div class="col-sm-3">
         <div class="field">
-          <%= f.label :date %>
+          <%= f.label :date %> <br>
           <%= f.date_select :date %>
         </div>
       </div>
       <div class="col-sm-1">
-        <div class="actions">
+        <div class="actions"> <br>
           <%= f.submit "Submit your ride" %>
         </div>
       </div>
